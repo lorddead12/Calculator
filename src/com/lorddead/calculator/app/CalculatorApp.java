@@ -18,6 +18,7 @@ public class CalculatorApp {
         int val1 = readIntInput(console, "Введите первое число - ");
         int val2 = readIntInput(console, "Введите второе число - ");
 
+        System.out.println("Xer");
         System.out.println(calcExp(val1, val2, sign));
 
         console.close();
@@ -25,7 +26,7 @@ public class CalculatorApp {
 
 
     private static int readIntInput(Scanner console, String prompt) {
-        while (true){
+        while (true) {
             try {
                 System.out.print(prompt);
                 return console.nextInt();
@@ -39,11 +40,16 @@ public class CalculatorApp {
     private static String calcExp(int val1, int val2, String sign) {
         final String resExp = "Результат вашего выражения: ";
         switch (sign) {
-            case "+" : return resExp + (val1 + val2);
-            case "*" : return resExp + (val1 * val2);
-            case "/" : return val2 != 0 ? resExp + (val1 / val2) : "Ошибка: деление на ноль.";
-            case "-" : return resExp + (val1 - val2);
-            default: return "Такой операции не существует!";
+            case "+":
+                return resExp + (val1 + val2);
+            case "*":
+                return resExp + (val1 * val2);
+            case "/":
+                return val2 != 0 ? resExp + (val1 / val2) : "Ошибка: деление на ноль.";
+            case "-":
+                return resExp + (val1 - val2);
+            default:
+                return "Такой операции не существует!";
         }
     }
 }
